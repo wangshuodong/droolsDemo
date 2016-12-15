@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule">
+    <!--
+        每一个kbase都有一个name，可以取任意字符串，但是不能重名。
+        packages 包名，其实就是src/main/resources下面的文件夹的名称，可以同时定义多个包，以逗号分隔开来就行
+        每一个ksession都有一个name，名字也可以是任意字符串，但是也不能重复
+        kbase和ksession里面的name属性是全局不能重复的
+        每一个kbase下面可以包含多个ksession。
+     -->
+    <!-- packages="com.drool.test" 表示drl 文件所在位置' -->
+    <kbase name="rules1" packages="message">
+        <!--kession name= 表示 被引用的规则名'-->
+        <ksession name="ksession-message"/>
+    </kbase>  
+    <kbase name="rules2" packages="person">
+        <ksession name="ksession-person"/>
+    </kbase>
+</kmodule>  

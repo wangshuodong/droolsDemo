@@ -1,0 +1,27 @@
+package com.sample  
+   
+import com.wangsd.droolsDemo.Message;
+   
+rule "Hello World1"  
+    when  
+        //判断status是否与常量Message.HELLO相同   赋值message到myMessage  
+        m : Message( status == Message.HELLO, myMessage : message )  
+    then  
+        //输出myMessage  
+        System.out.println( "wsd=" + myMessage );  
+        //更改Message  
+        m.setMessage( "Goodbye world" );  
+        m.setStatus( Message.GOODBYE );
+        //更改后继续执行规则  
+        update( m );  
+end  
+  
+  
+rule "GoodBye"  
+    when  
+        //判断status是否与常量Message.GOODBYE相同   赋值message到myMessage  
+        Message( status == Message.GOODBYE, myMessage : message )  
+    then  
+        //输出myMessage  
+        System.out.println(myMessage);
+end  
