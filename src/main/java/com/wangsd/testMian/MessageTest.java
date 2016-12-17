@@ -5,9 +5,6 @@ import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
-/**
- * Created by Administrator on 2016/12/15.
- */
 public class MessageTest {
     public static final void main(String[] args) {
         try {
